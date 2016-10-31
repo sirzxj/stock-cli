@@ -1,17 +1,15 @@
 {
   "name": "stock-cli",
   "version": "1.0.0",
-  "description": "Get stock info today",
+  "description": "Query stock in command line",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "sirzxj",
   "license": "ISC",
   "bin": {
-    "stock": ".bin/index.js"
+    "stock": "bin/index.js"
   },
-  "dependencies": {
-    "console.table": "^0.7.0"
+  "dependencies": {},
+  "devDependencies": {
+    "iconv-lite": "^0.4.13"
   }
 }

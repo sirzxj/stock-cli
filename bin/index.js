@@ -1,26 +1,31 @@
-// #!/usr/bin/env node
+#!/usr/bin/env node
 
 
 
 
-require('console.table');
 
-var http = require('http'),
-	iconv = require('iconv-lite'),
-	name = process.argv[2];
+var queryStock = require('../src/query-stock');
 
 
+var names = process.argv[2];
 
-console.log('1\t1');
+
+queryStock(names);
+
+
+
+
+
 
 // http.get("http://hq.sinajs.cn/list=" + name, function(res) {
 // 	res.pipe(iconv.decodeStream('gbk')).collect(function(err, decodedBody) {
 
 // 		var list = decodedBody.match(/\"(.+?)\"/g) || [];
-
-// 		if(!list.length) {
-// 			console.log('No Match stock,please check');
+		
+// 		if(!list.length || decodedBody.length < 40) {
+// 			console.log('No match stock,please check');
 // 		}else{
+
 // 			var table = [];
 // 			table = list.map(function(v) {
 // 				var item = v.replace(/\"/g,'').split(',');
@@ -33,10 +38,11 @@ console.log('1\t1');
 // 					Range: ((item[3] - item[2]) / item[2] * 100).toFixed(2)
 // 				};
 // 			});
-// 			console.table(table);
+
+// 			wirteTable(table)
+
 // 		}
 
-// 		console.log('sdfsdf');
 		
 // 		// console.log('sdfsdf \033[31m sdfsd fsdf sdf')
 
